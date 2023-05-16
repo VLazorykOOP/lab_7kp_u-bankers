@@ -9,8 +9,8 @@
 using namespace std;
 
 Bank bank;
-string AdminPassword = "admin4";
-string ClientPassword = "pass1";
+string AdminPassword = "";
+string ClientPassword = "";
 
 int adminId = 0, clientId = 0;
 
@@ -45,8 +45,8 @@ void MainMenu(int &choice, Bank &bank)
             if (admin.GetId() != 0)
             {
                 // admin.SetPassword("admin");
-                // cout << "Enter your password: ";
-                // cin >> AdminPassword;
+                cout << "Enter your password: ";
+                cin >> AdminPassword;
                 if (admin.Login(AdminPassword))
                     AdminMenu(choice, bank, admin);
             }
@@ -63,8 +63,8 @@ void MainMenu(int &choice, Bank &bank)
             if (client.GetId() != 0)
             {
                 // client.SetPassword("client");
-                // cout << "Enter your password: ";
-                // cin >> ClientPassword;
+                cout << "Enter your password: ";
+                cin >> ClientPassword;
                 if (client.Login(ClientPassword))
                     ClientMenu(choice, bank, client);
             }
