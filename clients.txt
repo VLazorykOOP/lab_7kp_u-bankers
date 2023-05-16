@@ -1,0 +1,10 @@
+1, Alex, Ivanenko, 25, Oxford Road 1, +380951234567, alex@gmail.com, 5000, active, pass1
+2, Mary, Smith, 19, Main Street 3B, +1 555-123-4567, mary.smith@gmail.com, 1000, active, pass2
+3, John, Doe, 32, Elm Street, +1 555-987-6543, john.doe@gmail.com, 2500, active, pass3
+4, Sarah, Johnson, 67, Maple Avenue 2C, +44 20 1234 5678, sarah.johnson@gmail.com, 2000, active, pass4
+5, David, Lee, 18, West Street, +44 20 8765 4321, david.lee@gmail.com, 1500, active, pass5
+6, Maria, Garcia, 31, Park Avenue, +34 123 456 789, maria.garcia@gmail.com, 43000, not active, pass6
+7, Juan, Perez, 29, Pine Street, +34 987 654 321, juan.perez@gmail.com, 4000, active, pass7
+8, Jane, Smith, 34, Oak Street 5D, +1 555-555-5555, jane.smith@gmail.com, 3000, active, pass8
+9, Michael, Brown, 81, Fifth Avenue, +1 555-111-2222, michael.brown@gmail.com, 5000, active, pass9
+10, Emily, Taylor, 21, Market Street 10B, +44 20 3456 7890, emily.taylor@gmail.com, 0, not active, pass10
