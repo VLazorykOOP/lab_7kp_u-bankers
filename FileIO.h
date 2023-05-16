@@ -128,12 +128,12 @@ void RewriteAdminsToFile(const string &fileName, vector<Admin> &admins)
     for (auto &admin : admins)
     {
         // Write admin information to the file
-        outputFile << admin.GetId() << ", ";
-        outputFile << admin.GetName() << ", ";
-        outputFile << admin.GetSurname() << ", ";
-        outputFile << admin.GetAddress() << ", ";
-        outputFile << admin.GetPhone() << ", ";
-        outputFile << admin.GetEmail() << ", ";
+        outputFile << admin.GetId() << ",";
+        outputFile << admin.GetName() << ",";
+        outputFile << admin.GetSurname() << ",";
+        outputFile << admin.GetAddress() << ",";
+        outputFile << admin.GetPhone() << ",";
+        outputFile << admin.GetEmail() << ",";
         outputFile << admin.GetPassword() << endl;
     }
 

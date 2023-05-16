@@ -11,6 +11,7 @@ int main()
     ReadAdminsFromFile("admins.txt", bank);
 
     int choice;
+    // bank.PrintAllAdmins();
     MainMenu(choice, bank);
 
     return 0;

@@ -44,7 +44,6 @@ void MainMenu(int &choice, Bank &bank)
 
             if (admin.GetId() != 0)
             {
-                // admin.SetPassword("admin");
                 cout << "Enter your password: ";
                 cin >> AdminPassword;
                 if (admin.Login(AdminPassword))
