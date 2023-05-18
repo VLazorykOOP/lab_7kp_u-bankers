@@ -17,9 +17,10 @@ private:
     string address;
     string phone;
     string email;
+    string password;
 
 public:
-    Person() : name("No name"), surname("No surname"), address("No address"), phone("No phone"), email("No email") {}
+    Person() : name("No name"), surname("No surname"), address("No address"), phone("No phone"), email("No email"), id(0), password("") {}
 
     void SetId(int id)
     {
@@ -69,6 +70,31 @@ public:
     {
         return email;
     }
+    void SetPassword(string password)
+    {
+        this->password = password;
+    }
+    string GetPassword()
+    {
+        return password;
+    }
+    bool Login(string password)
+    {
+        if (this->password == password)
+        {
+            cout << "Login successful" << endl;
+            return true;
+        }
+        else
+        {
+            cout << "Wrong password" << endl;
+            return false;
+        }
+    }
+    void Logout()
+    {
+        cout << "Logout successful" << endl;
+    }
     void Print()
     {
         cout << "ID: " << id << endl;
@@ -77,6 +103,7 @@ public:
         cout << "Address: " << address << endl;
         cout << "Phone: " << phone << endl;
         cout << "Email: " << email << endl;
+        cout << "Password: " << password << endl;
     }
 };
 
@@ -118,6 +145,10 @@ public:
     double GetBalance()
     {
         return balance;
+    }
+    void SetCardNumber(string cardNumber)
+    {
+        this->cardNumber = cardNumber;
     }
     string GetCardNumber()
     {
@@ -257,7 +288,6 @@ public:
 class Client : public Person
 {
 private:
-    string password;
     int age;
 
 public:
@@ -272,14 +302,7 @@ public:
         account.card.Print();
         cout << endl;
     }
-    void SetPassword(string password)
-    {
-        this->password = password;
-    }
-    string GetPassword()
-    {
-        return password;
-    }
+
     void SetAge(int age)
     {
         this->age = age;
@@ -288,29 +311,12 @@ public:
     {
         return age;
     }
-    bool Login(string password)
-    {
-        if (this->password == password)
-        {
-            cout << "Login successful" << endl;
-            return true;
-        }
-        else
-        {
-            cout << "Wrong password" << endl;
-            return false;
-        }
-    }
-    void Logout()
-    {
-        cout << "Logout successful" << endl;
-    }
 };
 
 class Admin : public Person
 {
 private:
-    string password;
+    // string password;
 
 public:
     void CancelCard(Client &client)
@@ -327,37 +333,10 @@ public:
         cout << "Account canceled" << endl;
         cout << endl;
     }
-    void SetPassword(string password)
-    {
-        this->password = password;
-    }
-    string GetPassword()
-    {
-        return password;
-    }
-    bool Login(string password)
-    {
-        if (this->password == password)
-        {
-            cout << "Login successful" << endl;
-            return true;
-        }
-        else
-        {
-            cout << "Wrong password" << endl;
-            return false;
-        }
-    }
-    void Logout()
-    {
-        cout << "Logout successful" << endl;
-    }
     void Print()
     {
         cout << "Admin info:" << endl;
         Person::Print();
-        cout << endl;
-        cout << "Password: " << password << endl;
         cout << endl;
     }
 };
@@ -428,41 +407,7 @@ public:
         }
         throw runtime_error("Admin not found");
     }
-    // Client *GetClientById(int clientId)
-    // {
-    //     for (auto &client : clients)
-    //     {
-    //         if (client.GetId() == clientId)
-    //         {
-    //             return &client;
-    //         }
-    //     }
-    //     return nullptr; // Client not found
-    // }
 
-    /* Client *GetClientById(int clientId)
-    {
-        for (auto &client : clients)
-        {
-            if (client.GetId() == clientId)
-            {
-                return &client;
-            }
-        }
-        return nullptr; // Client not found
-    } */
-
-    /* Admin *GetAdminById(int adminId)
-    {
-        for (auto &admin : admins)
-        {
-            if (admin.GetId() == adminId)
-            {
-                return &admin;
-            }
-        }
-        return nullptr; // Admin not found
-    } */
     vector<Client> &GetClients()
     {
         return clients;

@@ -24,7 +24,7 @@ void ReadClientsFromFile(const string &fileName, Bank &bank)
         // ID, Name, Surname, Age, Address, Phone, Email, Money, Card Status, Password
 
         int id, age;
-        string name, surname, address, phone, email, cardStatus, password;
+        string name, surname, address, phone, email, cardStatus, password, cardNumber;
         double money;
 
         stringstream ss(line);
@@ -38,6 +38,7 @@ void ReadClientsFromFile(const string &fileName, Bank &bank)
         getline(ss >> ws, phone, ',');
         getline(ss >> ws, email, ',');
         ss >> money >> comma >> ws;
+        getline(ss >> ws, cardNumber, ',');
         getline(ss >> ws, cardStatus, ',');
         getline(ss >> ws, password, ',');
 
@@ -52,6 +53,7 @@ void ReadClientsFromFile(const string &fileName, Bank &bank)
         client.SetEmail(email);
         client.account.card.SetBalance(money);
         client.SetPassword(password);
+        client.account.card.SetCardNumber(cardNumber);
 
         // Check if card status is "active"
         if (cardStatus == "active")
@@ -158,6 +160,7 @@ void RewriteClientsToFile(const string &fileName, vector<Client> &clients)
         outputFile << client.GetAddress() << ", ";
         outputFile << client.GetPhone() << ", ";
         outputFile << client.GetEmail() << ", ";
+        outputFile << client.account.card.GetBalance() << ", ";
         outputFile << client.account.card.GetBalance() << ", ";
 
         // Write card status based on the isActive flag
